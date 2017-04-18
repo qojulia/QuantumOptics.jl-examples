@@ -3,8 +3,17 @@ markdowndir = "markdown"
 juliadir = "julia"
 targetpath = "../QuantumOptics.jl-documentation/src/examples"
 
+if !isdir(markdowndir)
+    println("Creating markdown output directory at \"", markdowndir, "\"")
+    mkdir(markdowndir)
+end
+if !isdir(juliadir)
+    println("Creating julia source output directory at \"", juliadir, "\"")
+    mkdir(juliadir)
+end
+
 names = filter(name->endswith(name, ".ipynb"), readdir(sourcedir))
-# println(names)
+
 
 function convert2source(name)
     sourcepath = joinpath(sourcedir, name)
