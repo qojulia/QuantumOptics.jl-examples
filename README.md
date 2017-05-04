@@ -5,11 +5,12 @@ The examples are created as [jupyter notebook](http://jupyter.org/) and converte
 
 ## Directory layout
 
-When building the documentation the only requirement is that the examples and the documentation are in the same directory:
+When building the documentation the only requirement is that the examples, the documentation and the website are in the same directory:
 
     |
     |--> ./QuantumOptics.jl-examples
     |--> ./QuantumOptics.jl-documentation
+    |--> ./QuantumOptics.jl-website
 
 
 ## Software requirements
@@ -20,4 +21,4 @@ When building the documentation the only requirement is that the examples and th
 ## Build process
 
 * Make sure the correct version of **QuantumOptics.jl** is in the Julia searchpath.
-* Run `julia make.jl`. This will execute the examples and store the markdown output and the generated images in the markdown folder. Additionally, these files are copied to `QuantumOptics.jl-documentation/src/examples`.
+* Run `julia make.jl`. This will execute the examples and store the markdown output and the generated images in the markdown folder. These files are then copied to `QuantumOptics.jl-documentation/src/examples`. Additionally, the codesnippets used for the website are copied into `QuantumOptics.jl-website/src/_codesnippets/src`
