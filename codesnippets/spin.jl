@@ -1,5 +1,4 @@
 using QuantumOptics
-
 b = SpinBasis(3//2)
 sm = sigmam(b)
 H = 2*sigmaz(b)
@@ -15,11 +14,9 @@ subplot(2, 1, 1)
 plot(τ, corr)
 xlabel(L"\tau")
 ylabel(L"\langle \sigma_+(\tau) \sigma_-(0)\rangle")
-
 subplot(2, 1, 2)
 plot(ω, S)
 xlabel(L"\omega")
 ylabel(L"S(\omega)")
-
 tight_layout()
 savefig("spin.svg")

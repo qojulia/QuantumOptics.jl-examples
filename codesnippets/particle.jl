@@ -1,5 +1,4 @@
 using QuantumOptics
-
 basis = PositionBasis(-3, 3, 200)
 x = position(basis)
 p = momentum(basis)
@@ -16,4 +15,5 @@ for i=1:length(states)
 end
 xlabel("Position")
 ylabel("Energy")
+tight_layout()
 savefig("particle.svg")

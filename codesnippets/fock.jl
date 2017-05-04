@@ -1,5 +1,4 @@
 using QuantumOptics
-
 b = FockBasis(50)
 a = destroy(b)
 at = create(b)
@@ -14,4 +13,5 @@ for i in 1:4
     Q = qfunc(psit[i], x, x)
     pcolor(x, x, Q)
 end
-savefig("fock.svg")
+tight_layout()
+savefig("fock.png")

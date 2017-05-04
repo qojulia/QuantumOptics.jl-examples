@@ -1,5 +1,4 @@
 using QuantumOptics
-
 b = NLevelBasis(3)
 t12 = transition(b, 1, 2)
 t23 = transition(b, 2, 3)
@@ -17,4 +16,5 @@ plot(tout, expect(dm(basisstate(b, 1)), psit), label=L"$|1\rangle$")
 xlabel("Time")
 ylabel("Probability")
 legend()
+tight_layout()
 savefig("nlevel.svg")
