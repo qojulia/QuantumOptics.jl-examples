@@ -1,9 +1,7 @@
 sourcedir = "notebooks"
 markdowndir = "markdown"
 juliadir = "julia"
-codesnippetsdir = "codesnippets"
 targetpath_examples = "../QuantumOptics.jl-documentation/src/examples"
-targetpath_codesnippets = "../QuantumOptics.jl-website/src/_codesnippets/src"
 
 if !isdir(markdowndir)
     println("Creating markdown output directory at \"", markdowndir, "\"")
@@ -36,4 +34,3 @@ for name in names
 end
 
 cp(markdowndir, targetpath_examples; remove_destination=true)
-cp(codesnippetsdir, targetpath_codesnippets; remove_destination=true)

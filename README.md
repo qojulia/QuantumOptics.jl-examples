@@ -21,4 +21,4 @@ When building the documentation the only requirement is that the examples, the d
 ## Build process
 
 * Make sure the correct version of **QuantumOptics.jl** is in the Julia searchpath.
-* Run `julia make.jl`. This will execute the examples and store the markdown output and the generated images in the markdown folder. These files are then copied to `QuantumOptics.jl-documentation/src/examples`. Additionally, the codesnippets used for the website are copied into `QuantumOptics.jl-website/src/_codesnippets/src`
+* Run `julia make.jl`. This will execute the examples and store the markdown output and the generated images in the markdown folder. These files are then copied to `QuantumOptics.jl-documentation/src/examples`.
