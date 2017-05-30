@@ -3,7 +3,7 @@ basis = PositionBasis(-3, 3, 200)
 x = position(basis)
 p = momentum(basis)
 H = p^2/4 + 2*full(x^2)
-energies, states = eig((H+dagger(H))/2, 1:5)
+energies, states = eigenstates((H+dagger(H))/2, 5)
 
 using PyPlot
 xpoints = samplepoints(basis)
