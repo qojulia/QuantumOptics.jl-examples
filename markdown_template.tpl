@@ -17,7 +17,9 @@
 {%- set parts = cell.source.split("$$") %}
 {%- for i in range(parts | count) %}
 {%- if i % 2 %}
-```math{{ parts[i] }}```
+```math
+{{ parts[i] }}
+```
 {%- else %}{{ parts[i] | replace("$", "``") }}{%- endif %}
 {%- endfor %}
 {% endblock markdowncell %}
