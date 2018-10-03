@@ -14,15 +14,14 @@ end
 
 names = filter(name->endswith(name, ".ipynb"), readdir(sourcedir))
 
-
 function convert2source(name)
     sourcepath = joinpath(sourcedir, name)
-    run(`jupyter-nbconvert --to=script --ExecutePreprocessor.kernel_name=julia-0.7 --ExecutePreprocessor.timeout=100 --output-dir=$juliadir $sourcepath`)
+    run(`jupyter-nbconvert --to=script --ExecutePreprocessor.kernel_name=julia-0.7 --ExecutePreprocessor.timeout=200 --output-dir=$juliadir $sourcepath`)
 end
 
 function convert2markdown(name)
     sourcepath = joinpath(sourcedir, name)
-    run(`jupyter-nbconvert --to markdown --ExecutePreprocessor.kernel_name=julia-0.7 --ExecutePreprocessor.timeout=100 --output-dir=$markdowndir --template=markdown_template.tpl --execute $sourcepath `)
+    run(`jupyter-nbconvert --to markdown --ExecutePreprocessor.kernel_name=julia-0.7 --ExecutePreprocessor.timeout=200 --output-dir=$markdowndir --template=markdown_template.tpl --execute $sourcepath `)
 end
 
 for name in names
@@ -33,4 +32,4 @@ for name in names
     convert2markdown(name)
 end
 
-cp(markdowndir, targetpath_examples; remove_destination=true)
+cp(markdowndir, targetpath_examples; force=true)
