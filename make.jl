@@ -1,8 +1,8 @@
-sourcedir = "notebooks"
-markdowndir = "markdown"
+sourcedir = "./notebooks"
+markdowndir = "./markdown"
 juliadir = "julia"
 targetpath_examples = "../QuantumOptics.jl-documentation/src/examples"
-jupyter_kernel_name = "julia-1.9"
+jupyter_kernel_name = "julia-1.10"
 
 if !isdir(markdowndir)
     println("Creating markdown output directory at \"", markdowndir, "\"")
