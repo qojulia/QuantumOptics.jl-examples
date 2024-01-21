@@ -1,6 +1,6 @@
 sourcedir = "./notebooks"
 markdowndir = "./markdown"
-juliadir = "julia"
+juliadir = "./julia"
 targetpath_examples = "../QuantumOptics.jl-documentation/src/examples"
 jupyter_kernel_name = "julia-1.10"
 
