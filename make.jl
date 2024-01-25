@@ -1,7 +1,7 @@
 sourcedir = "./notebooks"
 markdowndir = "./markdown"
 juliadir = "./julia"
-targetpath_examples = "../QuantumOptics.jl-documentation/src/examples"
+targetpath_examples = get(ENV, "TARGETPATH_EXAMPLES", "../QuantumOptics.jl-documentation/src/examples")
 jupyter_kernel_name = "julia-1.10"
 
 if !isdir(markdowndir)
