@@ -2,7 +2,7 @@ sourcedir = "./notebooks"
 markdowndir = "./markdown"
 juliadir = "./julia"
 targetpath_examples = get(ENV, "TARGETPATH_EXAMPLES", "../QuantumOptics.jl-documentation/src/examples")
-jupyter_kernel_name = "julia-1.10"
+jupyter_kernel_name = "julia-1.11"
 
 if !isdir(markdowndir)
     println("Creating markdown output directory at \"", markdowndir, "\"")
@@ -19,12 +19,12 @@ ENV["JULIA_PROJECT"] = pwd()
 
 function convert2source(name)
     sourcepath = joinpath(sourcedir, name)
-    run(`jupyter-nbconvert --to=script --ExecutePreprocessor.kernel_name=$jupyter_kernel_name --ExecutePreprocessor.timeout=200 --output-dir=$juliadir $sourcepath`)
+    run(`jupyter nbconvert --to=script --ExecutePreprocessor.kernel_name=$jupyter_kernel_name --ExecutePreprocessor.timeout=200 --output-dir=$juliadir $sourcepath`)
 end
 
 function convert2markdown(name)
     sourcepath = joinpath(sourcedir, name)
-    run(`jupyter-nbconvert --to markdown --ExecutePreprocessor.kernel_name=$jupyter_kernel_name --ExecutePreprocessor.timeout=200 --output-dir=$markdowndir --template=markdown_template.tpl --execute $sourcepath `)
+    run(`jupyter nbconvert --to markdown --ExecutePreprocessor.kernel_name=$jupyter_kernel_name --ExecutePreprocessor.timeout=200 --output-dir=$markdowndir --template=markdown_template.tpl --execute $sourcepath `)
 end
 
 overwrite = true
