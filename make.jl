@@ -2,7 +2,10 @@ sourcedir = "./notebooks"
 markdowndir = "./markdown"
 juliadir = "./julia"
 targetpath_examples = get(ENV, "TARGETPATH_EXAMPLES", "../QuantumOptics.jl-documentation/src/examples")
-jupyter_kernel_name = "julia-1.11"
+jupyter_kernel_name = "julia"
+
+using IJulia
+IJulia.installkernel(jupyter_kernel_name; specname=jupyter_kernel_name, displayname=jupyter_kernel_name)
 
 if !isdir(markdowndir)
     println("Creating markdown output directory at \"", markdowndir, "\"")
