@@ -5,7 +5,7 @@ targetpath_examples = get(ENV, "TARGETPATH_EXAMPLES", "../QuantumOptics.jl-docum
 jupyter_kernel_name = "julia"
 
 using IJulia
-IJulia.installkernel(jupyter_kernel_name; specname=jupyter_kernel_name, displayname=jupyter_kernel_name)
+IJulia.installkernel(jupyter_kernel_name, "--project=@."; specname=jupyter_kernel_name, displayname=jupyter_kernel_name)
 
 if !isdir(markdowndir)
     println("Creating markdown output directory at \"", markdowndir, "\"")
@@ -32,7 +32,7 @@ end
 
 overwrite = true
 
-Threads.@threads for name in names
+for name in names
     mdname = name[1:end-6] * ".md"
     if overwrite || !isfile(joinpath(markdowndir, mdname))
         # Convert notebook to julia file
